@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login / Signup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  </style>
+</head>
+<body class="h-screen bg-gray-900 text-white flex items-center justify-center">
+
+  <div class="relative flex w-full max-w-6xl h-[90vh] rounded-2xl shadow-2xl overflow-hidden" style="min-width: 900px">
+
+    <!-- Left Side: Sign Up -->
+    <!-- Signup Form (Left Side) -->
+    <div
+      id="signup-container"
+      class="w-1/2 bg-gray-800 flex flex-col justify-center px-12 transition-transform duration-700 ease-in-out"
+    >
+      <h2 class="text-3xl font-bold text-indigo-400 mb-3">Create Account</h2>
+      <p class="text-gray-400 mb-8 text-sm">
+        Sign up to get started with our amazing platform
+      </p>
+      <form class="space-y-5">
+        <div>
+          <label class="block text-sm mb-1">Full Name</label>
+          <input
+            type="text"
+            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Email</label>
+          <input
+            type="email"
+            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Password</label>
+          <input
+            type="password"
+            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Re-enter Password</label>
+          <input
+            type="password"
+            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg font-semibold transition"
+        >
+          Sign Up
+        </button>
+      </form>
+      <p class="mt-8 text-center text-gray-400 text-sm">
+        Already have an account?
+        <button
+          class="text-indigo-400 hover:underline font-medium"
+          onclick="showLogin()"
+        >
+          Log in
+        </button>
+      </p>
+    </div>
+
+
+    <!-- Right Side: Login -->
+    <div
+      id="login-container"
+      class="w-1/2 bg-gray-900 flex flex-col justify-center px-12 transition-transform duration-700 ease-in-out"
+    >
+      <h2 class="text-3xl font-bold text-indigo-400 mb-3">Welcome Back</h2>
+      <p class="text-gray-400 mb-8 text-sm">Please log in to your account</p>
+      <form class="space-y-5">
+        <div>
+          <label class="block text-sm mb-1">Email</label>
+          <input
+            type="email"
+            class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Password</label>
+          <input
+            type="password"
+            class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:ring-2 focus:ring-indigo-500"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-lg font-semibold transition"
+        >
+          Log In
+        </button>
+      </form>
+      <p class="mt-8 text-center text-gray-400 text-sm">
+        Don't have an account?
+        <button
+          class="text-indigo-400 hover:underline font-medium"
+          onclick="showSignup()"
+        >
+          Sign up
+        </button>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const loginContainer = document.getElementById("login-container");
+    const signupContainer = document.getElementById("signup-container");
+
+    function showLogin() {
+      signupContainer.style.transform = "translateX(-100%)";
+      loginContainer.style.transform = "translateX(0)";
+    }
+
+    function showSignup() {
+      loginContainer.style.transform = "translateX(100%)";
+      signupContainer.style.transform = "translateX(0)";
+    }
+
+    // Default view: login
+    showLogin();
+  </script>
+</body>
+</html>
